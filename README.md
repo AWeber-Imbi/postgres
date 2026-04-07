@@ -8,8 +8,7 @@ with the following extensions pre-installed:
 - [pgTAP](https://pgtap.org/) — unit testing
 - [pgvector](https://github.com/pgvector/pgvector) — vector similarity search
 
-The image sets `POSTGRES_USER=imbi` and `POSTGRES_DATABASE=imbi` by default, and
-pre-loads `age` and `pg_cron` via `shared_preload_libraries`.
+The image sets `POSTGRES_DB=imbi` by default, and pre-loads `age` and `pg_cron` via `shared_preload_libraries`.
 
 ## Pulling the Image
 
@@ -21,7 +20,7 @@ Multi-architecture builds are available for `linux/amd64` and `linux/arm64`.
 docker pull ghcr.io/aweber-imbi/postgres:main
 
 # Specific git tag
-docker pull ghcr.io/aweber-imbi/postgres:18.3-0
+docker pull ghcr.io/aweber-imbi/postgres:18.3-1
 ```
 
 ### Use in Docker Compose
@@ -49,12 +48,12 @@ connections.
 ### `POSTGRES_USER`
 
 Used together with `POSTGRES_PASSWORD` to create a superuser with the given name.
-Defaults to `postgres`. This image sets it to `imbi`.
+Defaults to `postgres`.
 
 ### `POSTGRES_DB`
 
 The name of the default database created on first startup. Defaults to the value
-of `POSTGRES_USER`. This image sets `POSTGRES_DATABASE=imbi`.
+of `POSTGRES_USER`. This image sets `POSTGRES_DB=imbi`.
 
 ### `POSTGRES_INITDB_ARGS`
 
