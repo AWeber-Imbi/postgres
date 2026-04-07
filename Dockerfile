@@ -8,5 +8,4 @@ RUN apt update \
  && apt install -y postgresql-18-age postgresql-18-cron postgresql-18-pgtap postgresql-18-pgvector \
  && rm -rf /var/lib/apt/lists/* \
  && cp  /usr/share/postgresql/postgresql.conf.sample /etc/postgresql/postgresql.conf \
- && echo "shared_preload_libraries = 'age, pg_cron'" >> /etc/postgresql/postgresql.conf \
- && echo "cron.database_name = 'imbi'" >> /etc/postgresql/postgresql.conf
+ && echo "shared_preload_libraries = 'age, pg_cron'" >> /etc/postgresql/postgresql.conf
