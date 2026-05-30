@@ -17,10 +17,10 @@ Multi-architecture builds are available for `linux/amd64` and `linux/arm64`.
 
 ```bash
 # Latest from main
-docker pull ghcr.io/aweber-imbi/postgres:main
+docker pull ghcr.io/aweber-imbi/postgres:latest
 
 # Specific git tag
-docker pull ghcr.io/aweber-imbi/postgres:18.3-1
+docker pull ghcr.io/aweber-imbi/postgres:18.4-10
 ```
 
 ### Use in Docker Compose
@@ -28,7 +28,7 @@ docker pull ghcr.io/aweber-imbi/postgres:18.3-1
 ```yaml
 services:
   postgres:
-    image: ghcr.io/aweber-imbi/postgres:main
+    image: ghcr.io/aweber-imbi/postgres:latest
     environment:
       POSTGRES_PASSWORD: your-password
 ```
