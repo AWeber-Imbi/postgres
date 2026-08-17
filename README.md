@@ -20,7 +20,7 @@ Multi-architecture builds are available for `linux/amd64` and `linux/arm64`.
 docker pull ghcr.io/aweber-imbi/postgres:latest
 
 # Specific git tag
-docker pull ghcr.io/aweber-imbi/postgres:18.4-10
+docker pull ghcr.io/aweber-imbi/postgres:18.6-1
 ```
 
 ### Use in Docker Compose
