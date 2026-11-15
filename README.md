@@ -124,7 +124,8 @@ scripts.
 A new image does not change the `age` extension version in an existing
 database, because initialization scripts do not run on an initialized data
 directory. If your database has `age` 1.7.0, run this statement one time after
-you start the `18.7-0` image:
+you start the `18.7-0` image. Stop graph traffic before you start the image, and
+resume it only after this statement succeeds:
 
 ```sql
 ALTER EXTENSION age UPDATE TO '1.8.0';
