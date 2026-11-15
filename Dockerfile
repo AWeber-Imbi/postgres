@@ -1,10 +1,10 @@
-FROM postgres:18.6
+FROM postgres:18.7
 
 ENV POSTGRES_DB=imbi
 
 RUN apt update \
  && apt upgrade -y \
- && apt install -y barman-cli-cloud postgresql-18-age postgresql-18-cron postgresql-18-pgtap postgresql-18-pgvector \
+ && apt install -y barman-cli-cloud postgresql-18-age=1.8.0~rc0-* postgresql-18-cron postgresql-18-pgtap postgresql-18-pgvector \
  && rm -rf /var/lib/apt/lists/* \
  && cp  /usr/share/postgresql/postgresql.conf.sample /etc/postgresql/postgresql.conf \
  && echo "shared_preload_libraries = 'age, pg_cron'" >> /etc/postgresql/postgresql.conf \

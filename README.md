@@ -20,7 +20,7 @@ Multi-architecture builds are available for `linux/amd64` and `linux/arm64`.
 docker pull ghcr.io/aweber-imbi/postgres:latest
 
 # Specific git tag
-docker pull ghcr.io/aweber-imbi/postgres:18.6-1
+docker pull ghcr.io/aweber-imbi/postgres:18.7-0
 ```
 
 ### Use in Docker Compose
@@ -118,3 +118,15 @@ scripts in `/docker-entrypoint-initdb.d/` are skipped entirely. If a script
 fails mid-initialization and the container is restarted, the partially
 initialized data directory may prevent subsequent runs from re-executing the
 scripts.
+
+## Upgrading an Existing AGE Database
+
+A new image does not change the `age` extension version in an existing
+database, because initialization scripts do not run on an initialized data
+directory. If your database has `age` 1.7.0, run this statement one time after
+you start the `18.7-0` image. Stop graph traffic before you start the image, and
+resume it only after this statement succeeds:
+
+```sql
+ALTER EXTENSION age UPDATE TO '1.8.0';
+```
